@@ -9,7 +9,8 @@ repo sync -f && rm -rf system/core && repo sync -f
 lunch <<EOF
 8
 EOF
-make carbon -j5
+CORES=`nproc`
+make carbon -j$CORES
 mv /out/target/product/u8833/CA* .
 echo "Done"
 echo "The build is in the carbon directory"
