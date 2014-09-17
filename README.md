@@ -26,7 +26,6 @@ Install the Repository Tool
 Initialize the CarbonRom Repository and Build CarbonRom
 -------------------------------------------------------
 
-    repo init -u git://github.com/luca020400/android.git -b jb2
     curl https://raw.githubusercontent.com/luca020400/build_script/master/build.sh >> build.sh
     chmod +x build.sh
     ./build.sh
