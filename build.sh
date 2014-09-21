@@ -7,7 +7,7 @@ rm -rf out/target/product/u8833 >> /dev/null
 rm -rf system/core >> /dev/null
 echo "Downloading sources"
 repo sync -f && rm -rf system/core >> /dev/null && repo sync -f
-echo"Building CarbonRom 4.2.2"
+echo "Building CarbonRom 4.2.2"
 . build/envsetup.sh
 lunch <<EOF
 8
