@@ -1,10 +1,5 @@
-Carbon-Dev Source
-===================
-
-Getting Started
----------------
-To get started with Carbon-Dev sources, you'll need to get
-familiar with [Git and Repo](http://source.android.com/source/version-control.html).
+luca0204000 automatic buiild script
+===================================
 
 
 Create the Directories
