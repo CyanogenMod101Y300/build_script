@@ -12,7 +12,7 @@ echo "Building CarbonRom 4.2.2"
 lunch <<EOF
 8
 EOF
-CORES=`nproc`
+CORES=$(( `nproc` + 1 ))
 make carbon -j$CORES
 mv out/target/product/u8833/CARBON*.zip .
 echo "Done"
