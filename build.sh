@@ -14,6 +14,6 @@ lunch <<EOF
 EOF
 CORES=$(( `nproc` + 1 ))
 make carbon -j$CORES
-mv out/target/product/u8833/CARBON*.zip .
+cp out/target/product/u8833/CARBON*.zip .
 echo "Done"
 echo "The build is in the carbon directory"
