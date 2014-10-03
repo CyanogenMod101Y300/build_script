@@ -2,7 +2,7 @@
 
 echo "Build script for CarbonRom 4.2.2 by luca020400"
 echo "Enjoy !!!"
-repo init -u git://github.com/luca020400/android.git -b jb2
+repo init -u git://github.com/CarbonRomJellyBeanY300/android.git -b jb2
 rm -rf out/target/product/u8833 >> /dev/null
 rm -rf system/core >> /dev/null
 echo "Downloading sources"
