@@ -15,10 +15,10 @@ repo init -u git://github.com/CarbonRomJellyBeanY300/android.git -b jb2 >> /dev/
 
 echo "Downloading sources 1/2"
 rm -rf system/core >> /dev/null
-repo sync -f
+repo sync -f  >> /dev/null
 echo "Downloading sources 2/2"
 rm -rf system/core >> /dev/null
-repo sync -f
+repo sync -f  >> /dev/null
 
 echo "Select your device"
 echo "Y300/G510 --> 1"
