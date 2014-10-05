@@ -43,7 +43,6 @@ elif [[ $device = "1" ]]; then
     echo ""
     echo "Building CarbonRom 4.2.2 for Y300/G510"
     make carbon -j$CORES
-    echo ""
     echo "Done"
     cp out/target/product/u8833/CARBON*.zip . >> /dev/null
     echo ""
@@ -57,7 +56,6 @@ elif [[ $device = "2" ]]; then
     echo ""
     echo "Building CarbonRom 4.2.2 for G330"
     make carbon -j$CORES
-    echo ""
     echo "Done"
     cp out/target/product/u8825/CARBON*.zip . >> /dev/null
     echo ""
