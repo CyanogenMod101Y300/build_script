@@ -29,7 +29,7 @@ repo sync -f  >> /dev/null
 echo "Y300/G510 --> 1"
 echo "G330 --> 2"
 echo -n "Select your device : "
-read device 
+read device
 
 if [[ $device = "" ]]; then
     echo ""
