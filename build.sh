@@ -3,7 +3,6 @@
 CORES=$(( `nproc` + 1 ))
 
 echo "Build script for CarbonRom 4.2.2 by luca020400"
-echo ""
 echo "Enjoy !!!"
 echo ""
 
