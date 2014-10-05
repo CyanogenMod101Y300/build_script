@@ -30,16 +30,16 @@ if [[ $device = "" ]]; then
 elif [[ $device = "1" ]]; then
     echo "You selected Y300/G510"
     rm -rf device/huawei/u8825 >> /dev/null
+    . build/envsetup.sh
+    lunch carbon_u8833-userdebug
 elif [[ $device = "2" ]]; then
     echo "You selected G330"
     rm -rf device/huawei/u8833 >> /dev/null
-    else echo "You must select 1 or 2"
+    . build/envsetup.sh
+    lunch carbon_u8825-userdebug
+else echo "You must select 1 or 2"
 fi
 echo "Building CarbonRom 4.2.2"
-. build/envsetup.sh
-lunch <<EOF
-8
-EOF
 CORES=$(( `nproc` + 1 ))
 make carbon -j$CORES
 echo "Done"
