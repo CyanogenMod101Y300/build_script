@@ -1,5 +1,7 @@
 #/bin/bash
 
+CORES=$(( `nproc` + 1 ))
+
 echo "Build script for CarbonRom 4.2.2 by luca020400"
 echo "Enjoy !!!"
 
@@ -32,18 +34,19 @@ elif [[ $device = "1" ]]; then
     rm -rf device/huawei/u8825 >> /dev/null
     . build/envsetup.sh
     lunch carbon_u8833-userdebug
+    echo "Building CarbonRom 4.2.2 for Y300/G510"
+    make carbon -j$CORES
+    echo "Done"
+    cp out/target/product/u8833/CARBON*.zip . >> /dev/null
 elif [[ $device = "2" ]]; then
     echo "You selected G330"
     rm -rf device/huawei/u8833 >> /dev/null
     . build/envsetup.sh
     lunch carbon_u8825-userdebug
+    echo "Building CarbonRom 4.2.2 for G330"
+    make carbon -j$CORES
+    echo "Done"
+    cp out/target/product/u8825/CARBON*.zip . >> /dev/null
 else echo "You must select 1 or 2"
 fi
-echo "Building CarbonRom 4.2.2"
-CORES=$(( `nproc` + 1 ))
-make carbon -j$CORES
-echo "Done"
-
-cp out/target/product/u8833/CARBON*.zip . >> /dev/null
-cp out/target/product/u8825/CARBON*.zip . >> /dev/null
 echo "The build is in the carbon directory"
