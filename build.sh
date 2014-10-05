@@ -26,11 +26,11 @@ echo "Downloading sources 2/2"
 rm -rf system/core >> /dev/null
 repo sync -f  >> /dev/null
 
-echo "Select your device"
 echo "Y300/G510 --> 1"
 echo "G330 --> 2"
+echo -n "Select your device : "
+read device 
 
-read -s -n 1 device
 if [[ $device = "" ]]; then
     echo ""
     echo 'You pressed enter!'
