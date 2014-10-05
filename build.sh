@@ -29,12 +29,13 @@ repo sync -f  >> /dev/null
 echo "Select your device"
 echo "Y300/G510 --> 1"
 echo "G330 --> 2"
-echo ""
 
 read -s -n 1 device
 if [[ $device = "" ]]; then
+    echo ""
     echo 'You pressed enter!'
 elif [[ $device = "1" ]]; then
+    echo ""
     echo "You selected Y300/G510"
     rm -rf device/huawei/u8825 >> /dev/null
     . build/envsetup.sh
@@ -48,6 +49,7 @@ elif [[ $device = "1" ]]; then
     echo ""
     echo "The build is in the carbon directory"
 elif [[ $device = "2" ]]; then
+    echo ""
     echo "You selected G330"
     rm -rf device/huawei/u8833 >> /dev/null
     . build/envsetup.sh
@@ -60,5 +62,5 @@ elif [[ $device = "2" ]]; then
     cp out/target/product/u8825/CARBON*.zip . >> /dev/null
     echo ""
     echo "The build is in the carbon directory"
-else echo "You must select 1 or 2"
+else echo "" && echo "You must select 1 or 2"
 fi
