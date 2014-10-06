@@ -7,10 +7,8 @@ echo "Enjoy !!!"
 echo ""
 
 echo "Cleaning"
-rm -rf out/target/product/u8833 >> /dev/null
-rm -rf device/huawei/u8833 >> /dev/null
-rm -rf out/target/product/u8825 >> /dev/null
-rm -rf device/huawei/u8825 >> /dev/null
+rm -rf out/target/product/u88* >> /dev/null
+rm -rf device/huawei/u88* >> /dev/null
 rm -rf vendor/huawei/ >> /dev/null
 echo ""
 
