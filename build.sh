@@ -18,11 +18,11 @@ echo ""
 
 echo "Downloading sources 1/2"
 rm -rf system/core >> /dev/null
-repo sync -f  >> /dev/null
+repo sync -f -j8 >> /dev/null
 
 echo "Downloading sources 2/2"
 rm -rf system/core >> /dev/null
-repo sync -f  >> /dev/null
+repo sync -f -j8 >> /dev/null
 
 echo "Y300/G510 --> 1"
 echo "G330 --> 2"
