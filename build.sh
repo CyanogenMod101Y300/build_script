@@ -42,7 +42,7 @@ elif [[ $device = "1" ]]; then
     echo "Done"
     cp out/target/product/u8833/cm-*.zip . >> /dev/null
     echo ""
-    echo "The build is in the carbon directory"
+    echo "The build is in the CyanogenMod directory"
 elif [[ $device = "2" ]]; then
     echo ""
     echo "You selected G330"
@@ -55,6 +55,6 @@ elif [[ $device = "2" ]]; then
     echo "Done"
     cp out/target/product/u8825/cm-*.zip . >> /dev/null
     echo ""
-    echo "The build is in the carbon directory"
+    echo "The build is in the CyanogenMod directory"
 else echo "" && echo "You must select 1 or 2"
 fi
