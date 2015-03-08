@@ -16,10 +16,7 @@ echo "Initializing the CyanogenMod Repository"
 repo init -u git://github.com/CyanogenMod/android.git -b cm-10.1 >> /dev/null
 echo ""
 
-echo "Downloading sources 1/2"
-repo sync -f -j8 >> /dev/null
-
-echo "Downloading sources 2/2"
+echo "Downloading sources"
 repo sync -f -j8 >> /dev/null
 
 echo "Y300/G510 --> 1"
