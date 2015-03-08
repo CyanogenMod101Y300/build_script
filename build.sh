@@ -38,7 +38,7 @@ elif [[ $device = "1" ]]; then
     breakfast u8833
     echo ""
     echo "Building CyanogenMod 10.1 for Y300/G510"
-    make carbon -j$CORES
+    mka bacon -j$CORES
     echo "Done"
     cp out/target/product/u8833/cm-*.zip . >> /dev/null
     echo ""
@@ -51,7 +51,7 @@ elif [[ $device = "2" ]]; then
     breakfast u8825
     echo ""
     echo "Building CyanogenMod 10.1 for G330"
-    make carbon -j$CORES
+    mka bacon -j$CORES
     echo "Done"
     cp out/target/product/u8825/cm-*.zip . >> /dev/null
     echo ""
