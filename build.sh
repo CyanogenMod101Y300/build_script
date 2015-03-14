@@ -87,6 +87,9 @@ elif [[ $device = "3" ]]; then
     rm -rf device/huawei/ >> /dev/null
     rm -rf vendor/huawei/ >> /dev/null
     echo ""
+    
+    echo "Re-syncing"
+    repo sync -j8 >> /dev/null
 
     rm -rf device/huawei/u8833 >> /dev/null
     vendor/cm/get-prebuilts
