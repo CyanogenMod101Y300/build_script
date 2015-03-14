@@ -31,6 +31,7 @@ elif [[ $device = "1" ]]; then
     echo ""
     echo "You selected Y300/G510"
     rm -rf device/huawei/u8825 >> /dev/null
+    vendor/cm/get-prebuilts
     . build/envsetup.sh
     breakfast u8833
     echo ""
@@ -44,6 +45,7 @@ elif [[ $device = "2" ]]; then
     echo ""
     echo "You selected G330"
     rm -rf device/huawei/u8833 >> /dev/null
+    vendor/cm/get-prebuilts
     . build/envsetup.sh
     breakfast u8825
     echo ""
