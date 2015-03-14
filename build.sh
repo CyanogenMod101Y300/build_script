@@ -17,11 +17,12 @@ repo init -u git://github.com/CyanogenMod/android.git -b cm-10.1 >> /dev/null
 echo ""
 
 echo "Downloading sources"
-repo sync -f -j8 >> /dev/null
+repo sync -j8 >> /dev/null
 
 echo "Y300/G510 --> 1"
 echo "G330 --> 2"
-echo "Kernel only --> 3"
+echo "Build Y300/G510 & G330 --> 3"
+echo "Kernel only --> 4"
 
 echo -n "Make your choice : "
 read device
@@ -45,6 +46,7 @@ elif [[ $device = "1" ]]; then
     cp out/target/product/u8833/cm-*.zip . >> /dev/null
     echo ""
     echo "The build is in the CyanogenMod directory"
+    echo ""
 
 elif [[ $device = "2" ]]; then
     echo ""
@@ -61,8 +63,45 @@ elif [[ $device = "2" ]]; then
     cp out/target/product/u8825/cm-*.zip . >> /dev/null
     echo ""
     echo "The build is in the CyanogenMod directory"
+    echo ""
 
 elif [[ $device = "3" ]]; then
+    echo ""
+    echo "You selected Build Y300/G510 & G330"
+    echo ""
+    rm -rf device/huawei/u8825 >> /dev/null
+    vendor/cm/get-prebuilts
+    . build/envsetup.sh
+    breakfast u8833
+    echo ""
+    echo "Building CyanogenMod 10.1 for Y300/G510"
+    mka bacon -j$CORES
+    echo "Done"
+    cp out/target/product/u8833/cm-*.zip . >> /dev/null
+    echo ""
+    echo "The Y300/G510 build is in the CyanogenMod directory"
+    echo ""
+
+    echo "Cleaning"
+    rm -rf out/target >> /dev/null
+    rm -rf device/huawei/ >> /dev/null
+    rm -rf vendor/huawei/ >> /dev/null
+    echo ""
+
+    rm -rf device/huawei/u8833 >> /dev/null
+    vendor/cm/get-prebuilts
+    . build/envsetup.sh
+    breakfast u8825
+    echo ""
+    echo "Building CyanogenMod 10.1 for G330"
+    mka bacon -j$CORES
+    echo "Done"
+    cp out/target/product/u8825/cm-*.zip . >> /dev/null
+    echo ""
+    echo "The G330 build is in the CyanogenMod directory"
+    echo ""
+
+elif [[ $device = "4" ]]; then
     echo ""
     echo "You selected Kernel only"
     echo ""
@@ -70,10 +109,9 @@ elif [[ $device = "3" ]]; then
     . build/envsetup.sh
     echo ""
     echo "Building Kernel"
-    lunch $u8833 && mka bootimage -j5
+    lunch $u8833 && mka bootimage -j$CORES
     echo "Done"
     echo ""
-    echo "Check your /out directory"
 
-else echo "" && echo "You must select 1, 2 or 3"
+else echo "" && echo "You must select 1, 2, 3 or 4"
 fi
