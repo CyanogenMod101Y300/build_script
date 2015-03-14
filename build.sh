@@ -33,6 +33,7 @@ if [[ $device = "" ]]; then
 elif [[ $device = "1" ]]; then
     echo ""
     echo "You selected Y300/G510"
+    echo ""
     rm -rf device/huawei/u8825 >> /dev/null
     vendor/cm/get-prebuilts
     . build/envsetup.sh
@@ -48,6 +49,7 @@ elif [[ $device = "1" ]]; then
 elif [[ $device = "2" ]]; then
     echo ""
     echo "You selected G330"
+    echo ""
     rm -rf device/huawei/u8833 >> /dev/null
     vendor/cm/get-prebuilts
     . build/envsetup.sh
@@ -63,6 +65,7 @@ elif [[ $device = "2" ]]; then
 elif [[ $device = "3" ]]; then
     echo ""
     echo "You selected Kernel only"
+    echo ""
     rm -rf device/huawei/u8825 >> /dev/null
     . build/envsetup.sh
     echo ""
