@@ -89,6 +89,7 @@ elif [[ $device = "3" ]]; then
     echo ""
     
     echo "Re-syncing"
+    echo ""
     repo sync -j8 >> /dev/null
 
     rm -rf device/huawei/u8833 >> /dev/null
