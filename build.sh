@@ -21,12 +21,15 @@ repo sync -f -j8 >> /dev/null
 
 echo "Y300/G510 --> 1"
 echo "G330 --> 2"
-echo -n "Select your device : "
+echo "Kernel only --> 3"
+
+echo -n "Make your choice : "
 read device
 
 if [[ $device = "" ]]; then
     echo ""
     echo 'You pressed enter!'
+
 elif [[ $device = "1" ]]; then
     echo ""
     echo "You selected Y300/G510"
@@ -41,6 +44,7 @@ elif [[ $device = "1" ]]; then
     cp out/target/product/u8833/cm-*.zip . >> /dev/null
     echo ""
     echo "The build is in the CyanogenMod directory"
+
 elif [[ $device = "2" ]]; then
     echo ""
     echo "You selected G330"
@@ -55,5 +59,18 @@ elif [[ $device = "2" ]]; then
     cp out/target/product/u8825/cm-*.zip . >> /dev/null
     echo ""
     echo "The build is in the CyanogenMod directory"
-else echo "" && echo "You must select 1 or 2"
+
+elif [[ $device = "3" ]]; then
+    echo ""
+    echo "You selected Kernel only"
+    rm -rf device/huawei/u8825 >> /dev/null
+    . build/envsetup.sh
+    echo ""
+    echo "Building Kernel"
+    lunch $u8833 && mka bootimage -j5
+    echo "Done"
+    echo ""
+    echo "Check your /out directory"
+
+else echo "" && echo "You must select 1, 2 or 3"
 fi
