@@ -36,7 +36,6 @@ elif [[ $device = "1" ]]; then
     echo "You selected Y300/G510"
     echo ""
     rm -rf device/huawei/u8825 >> /dev/null
-    vendor/cm/get-prebuilts
     . build/envsetup.sh
     breakfast u8833
     echo ""
@@ -53,7 +52,6 @@ elif [[ $device = "2" ]]; then
     echo "You selected G330"
     echo ""
     rm -rf device/huawei/u8833 >> /dev/null
-    vendor/cm/get-prebuilts
     . build/envsetup.sh
     breakfast u8825
     echo ""
@@ -70,7 +68,6 @@ elif [[ $device = "3" ]]; then
     echo "You selected Build Y300/G510 & G330"
     echo ""
     rm -rf device/huawei/u8825 >> /dev/null
-    vendor/cm/get-prebuilts
     . build/envsetup.sh
     breakfast u8833
     echo ""
@@ -93,7 +90,6 @@ elif [[ $device = "3" ]]; then
     repo sync -j8 >> /dev/null
 
     rm -rf device/huawei/u8833 >> /dev/null
-    vendor/cm/get-prebuilts
     . build/envsetup.sh
     breakfast u8825
     echo ""
